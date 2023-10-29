@@ -1,3 +1,4 @@
+import type { Viewport } from 'next'
 import type { Metadata } from 'next'
 import Head from 'next/head'
 import localFont from 'next/font/local'
@@ -14,7 +15,6 @@ const allianceNo2 = localFont({
 export const metadata: Metadata = {
   title: 'Unifying Data and Streamlining AI for Intelligent Decision-Making',
   description: 'Amaya unifies data & workflows to empower AI-human collaboration.',
-  themeColor: '#FBBC05',
   icons: {
     icon: 'favicons/favicon.ico',
     shortcut: 'favicons/favicon-16x16.png',
@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#FBBC05',
 }
 
 export default function RootLayout({
