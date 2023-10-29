@@ -12,34 +12,24 @@ const allianceNo2 = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Amaya | Your Partner in Exploration',
+  title: 'Amaya: Intelligent Engine Platform',
   description: 'Amaya unifies data & workflows to empower AI-human collaboration.',
-  keywords: ['Amaya', 'East Park Holdings\' Group', 'AI Chatbot', 'New York'],
-  authors: [{ name: 'Parth Patel', url: 'https://parth.ski' }],
+  themeColor: '#FBBC05',
+  icons: {
+    icon: 'favicons/favicon.ico',
+    shortcut: 'favicons/favicon-16x16.png',
+    apple: 'favicons/apple-touch-icon.png'
+  },
   openGraph: {
-    title: 'Amaya',
-    description: 'Amaya unifies data & workflows to empower AI-human collaboration.',
-    url: 'https://withamaya.com',
-    siteName: 'Amaya',
     images: [
       {
-        url: 'https://image.mux.com/syVZUPM8hwRPv008dJvaOg02Dxg00Z02oT4i4lbOb4usV5c/animated.gif?fps=30',
-        width: 800,
-        height: 600,
-        alt: 'Mushroom Trip',
+        url: 'images/amaya-og.png',
+        width: 900,
+        height: 450,
+        alt: 'Amaya OG Image',
       },
     ],
     locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    siteId: 'Your Twitter ID',
-    creator: '@YourTwitterHandle',
-    creatorId: 'Your Twitter ID',
-    title: 'Your Application Title',
-    description: 'A brief description of your application',
-    images: ['https://image.mux.com/syVZUPM8hwRPv008dJvaOg02Dxg00Z02oT4i4lbOb4usV5c/animated.gif?fps=15&end=5'],
   },
 }
 
