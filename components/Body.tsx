@@ -11,8 +11,8 @@ export default function Body() {
                 decision-making across various industries.
             </p>
             <p>
-                Request a demo to explore how Amaya can <br />
-                specifically benefit your organization.
+                Request a demo to explore how Amaya <br />
+                can benefit your organization.
             </p>
         </div>
     );
