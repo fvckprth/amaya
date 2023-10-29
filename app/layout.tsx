@@ -43,19 +43,20 @@ export default function RootLayout({
       <Head>
         <title>{(metadata.title as React.ReactNode) || 'Fallback Title'}</title>
         <meta name="description" content={metadata.description as string} />  {/* Type assertion to string */}
+        <meta name="theme-color" content="#FBBC05" />
         <meta name="apple-mobile-web-app-title" content="Amaya" />
         <meta property="og:site_name" content="Amaya" />
         <meta property="og:url" content="https://amaya.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metadata.title as string} />  {/* Type assertion to string */}
         <meta property="og:description" content={metadata.description as string} />  {/* Type assertion to string */}
-        <meta property="og:image" content="https://amaya.vercel.app/amaya-og.png" />
+        <meta property="og:image" content="https://amaya-jbr3y6sfz-east-park.vercel.app/images/amaya-og.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="amaya.vercel.app" />
         <meta property="twitter:url" content="https://amaya.vercel.app" />
         <meta name="twitter:title" content={metadata.title as string} />  {/* Type assertion to string */}
         <meta name="twitter:description" content={metadata.description as string} />  {/* Type assertion to string */}
-        <meta name="twitter:image" content="https://amaya.vercel.app/amaya-og.png" />
+        <meta name="twitter:image" content="https://amaya-jbr3y6sfz-east-park.vercel.app/images/amaya-og.png" />
       </Head>
       <body className={`${allianceNo2.className} h-full leading-none tracking-tight bg-[#0F0F0F]`}>
         {children}
