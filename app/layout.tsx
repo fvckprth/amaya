@@ -12,7 +12,7 @@ const allianceNo2 = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Amaya: Intelligent Engine Platform',
+  title: 'Unifying Data and Streamlining AI for Intelligent Decision-Making',
   description: 'Amaya unifies data & workflows to empower AI-human collaboration.',
   themeColor: '#FBBC05',
   icons: {
