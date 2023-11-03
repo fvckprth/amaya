@@ -1,6 +1,6 @@
 import Nav from '@/components/Nav'
 import Body from '@/components/Body'
-import CTAButton from '@/components/CTAButton'
+import { RequestDemoForm } from '@/components/RequestDemoForm'
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
           <Body />
         </div>
         <div>
-          <CTAButton />
+          <RequestDemoForm />
         </div>
       </div>
     </div>

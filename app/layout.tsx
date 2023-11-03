@@ -61,6 +61,7 @@ export default function RootLayout({
         <meta name="twitter:title" content={metadata.title as string} />  {/* Type assertion to string */}
         <meta name="twitter:description" content={metadata.description as string} />  {/* Type assertion to string */}
         <meta name="twitter:image" content="https://amaya-jbr3y6sfz-east-park.vercel.app/images/amaya-og.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <body className={`${allianceNo2.className} h-full leading-none tracking-tight bg-[#0F0F0F]`}>
         {children}
