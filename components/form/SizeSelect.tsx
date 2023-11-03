@@ -36,7 +36,7 @@ export const SizeSelect: React.FC<SizeSelectProps> = ({ value, onChange }) => {
           <Button
             role="combobox"
             aria-expanded={open}
-            className={`w-full justify-between ${value ? 'bg-[#2E2E2E]/25 text-[#E7E6E9]' : 'bg-[#2E2E2E]/25 text-[#E7E6E9]/50'}`}
+            className={`w-full text-base justify-between ${value ? 'bg-[#2E2E2E]/25 text-[#E7E6E9]' : 'bg-[#2E2E2E]/25 text-[#E7E6E9]/50'}`}
           >
             {value
               ? sizes.find((size) => size.value === value)?.label

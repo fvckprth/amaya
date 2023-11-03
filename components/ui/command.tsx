@@ -54,7 +54,7 @@ const CommandInput = React.forwardRef<
       <CommandPrimitive.Input
         ref={ref}
         className={cn(
-          "flex h-10 w-full rounded-none text-sm pl-2 bg-transparent placeholder:text-[#E7E6E9]/50 text-[#E7E6E9] disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-10 w-full rounded-none text-base pl-2 bg-transparent placeholder:text-[#E7E6E9]/50 text-[#E7E6E9] disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         {...props}
@@ -71,7 +71,7 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn("text-sm", className)}
+    className={cn("text-base", className)}
     {...props}
   />
 ))
@@ -84,7 +84,7 @@ const CommandEmpty = React.forwardRef<
 >((props, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className="py-6 text-center text-sm text-[#2E2E2E]"
+    className="py-6 text-center text-base text-[#2E2E2E]"
     {...props}
   />
 ))
@@ -126,7 +126,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-none px-3 py-2 text-sm aria-selected:bg-[#2E2E2E]/25 aria-selected:text-[#E7E6E9] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex w-full cursor-default select-none items-center rounded-none px-3 py-2 text-base aria-selected:bg-[#2E2E2E]/25 aria-selected:text-[#E7E6E9] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}

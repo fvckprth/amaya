@@ -84,7 +84,7 @@ export function RequestDemoForm() {
         <SheetContent 
             side={isMobile ? "bottom" : "right"} 
             className="flex flex-col gap-0 border-[#2E2E2E]/25"
-            style={isMobile ? { height: '64vh' } : {}}
+            style={isMobile ? { height: '72vh' } : {}}
         >
             <SheetHeader className="flex-shrink-0 p-4 md:p-6 border-b border-[#2E2E2E]/25">
             <SheetTitle className='text-left text-lg md:text-2xl'>
