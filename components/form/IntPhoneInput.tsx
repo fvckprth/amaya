@@ -92,7 +92,7 @@ export function IntPhoneInput({ name, control }: IntPhoneInputProps) {
         </PopoverContent>
       </Popover>
       <div className="flex ml-3 items-center bg-[#2E2E2E]/25 w-full">
-        <div className="pl-2 text-sm text-[#2E2E2E]">
+        <div className="pl-2 text-base text-[#2E2E2E]">
             {selectedCountry.dialCode}
         </div>
         <Controller
