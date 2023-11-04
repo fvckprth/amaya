@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { z } from "zod";
-import { useForm, useFormContext } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { formSchema } from '../validators/formSchema';
+import { formSchema } from '../../validators/formSchema';
 
+import Link from 'next/link';
 import { Input } from "@/components/ui/input"
 import {
   Sheet,
@@ -22,7 +23,6 @@ import {
     Form,
     FormField,
     FormLabel,
-    FormMessage,
   } from "@/components/ui/form"
 
 import { IndustrySelect } from "./form/IndustrySelect";
@@ -84,7 +84,12 @@ function CustomFormField({ name, control, component: Component, componentProps, 
 
 export function RequestDemoForm() {
     const [isLoading, setIsLoading] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      setIsMobile(window.innerWidth <= 768);
+    }, []);
+
     const form = useForm<RequestDemoFormSchema>({
         resolver: zodResolver(formSchema),
         defaultValues: DEFAULT_FORM_VALUES,
@@ -195,12 +200,15 @@ export function RequestDemoForm() {
                         onClick={form.handleSubmit(onSubmit)}>
                         Submit
                     </Button>
-                    <div>
-                        <p className="text-xs md:text-sm text-[#2E2E2E]">
-                            View privacy policy on how we <br/>
-                            will handle this information.
-                        </p>
-                    </div>
+                  <div>
+                    <p className="text-xs md:text-sm text-[#2E2E2E]">
+                        View{" "}
+                        <Link href="/privacy" className="hover:text-[#E7E6E9]/50 underline underline-offset-4 decoration-inherit hover:no-underline">
+                          privacy policy
+                        </Link>
+                        {" "}on how we <br/> will handle this information.
+                    </p>
+                  </div>
                 </div>
             </SheetFooter>
         </SheetContent>

@@ -17,7 +17,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { ScrollArea } from "../ui/scroll-area"
+import { ScrollArea } from "../../ui/scroll-area"
 
 interface IndustrySelectProps {
   value: string;

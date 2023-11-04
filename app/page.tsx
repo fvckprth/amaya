@@ -1,6 +1,7 @@
-import Nav from '@/components/Nav'
-import Body from '@/components/Body'
-import { RequestDemoForm } from '@/components/RequestDemoForm'
+import Nav from '@/components/marketing/Nav'
+import Body from '@/components/marketing/Body'
+import { RequestDemoForm } from '@/components/marketing/RequestDemoForm'
+import { Footer } from '@/components/marketing/Footer'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <div>
           <Nav />
           <Body />
+          <Footer />
         </div>
         <div>
           <RequestDemoForm />
