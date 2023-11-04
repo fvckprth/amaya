@@ -18,9 +18,21 @@ interface IntPhoneInputProps {
 }
 
 export function IntPhoneInput({ name, control }: IntPhoneInputProps) {
-    const [open, setOpen] = React.useState(false);
-    const defaultCountry = countries.find(country => country.value.toUpperCase() === 'US') || countries[0];
-    const [selectedCountry, setSelectedCountry] = React.useState(defaultCountry);
+  const [open, setOpen] = React.useState(false);
+  const defaultCountry = countries.find(country => country.value.toUpperCase() === 'US') || countries[0];
+  const [selectedCountry, setSelectedCountry] = React.useState(defaultCountry);
+  const [side, setSide] = React.useState<"bottom" | "left" | "top" | "right">(window.innerWidth <= 640 ? "bottom" : "left");
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setSide(window.innerWidth <= 640 ? "bottom" : "left");
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="flex">
@@ -51,7 +63,7 @@ export function IntPhoneInput({ name, control }: IntPhoneInputProps) {
             </div>
           </Button>
         </PopoverTrigger>
-        <PopoverContent side="left" align="start">
+        <PopoverContent side={side} align="start">
           <Command className="border border-[#2E2E2E]/25 w-[320px]">
             <CommandInput placeholder="Search country" />
             <ScrollArea className="h-64 w-full">

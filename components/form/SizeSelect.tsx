@@ -22,12 +22,24 @@ interface SizeSelectProps {
 }
   
 export const SizeSelect: React.FC<SizeSelectProps> = ({ value, onChange }) => {
-    const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false)
+  const [side, setSide] = React.useState<"bottom" | "left" | "top" | "right">(window.innerWidth <= 640 ? "bottom" : "left");
 
-    const handleSelect = (currentValue: string) => {
-      onChange(currentValue === value ? "" : currentValue);
-      setOpen(false);
+  React.useEffect(() => {
+    const handleResize = () => {
+      setSide(window.innerWidth <= 640 ? "bottom" : "left");
     };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleSelect = (currentValue: string) => {
+    onChange(currentValue === value ? "" : currentValue);
+    setOpen(false);
+  };
   
     return (
     <div className="flex">
@@ -50,7 +62,7 @@ export const SizeSelect: React.FC<SizeSelectProps> = ({ value, onChange }) => {
               </svg>
           </Button>
         </PopoverTrigger>
-        <PopoverContent side="left" align="start">
+        <PopoverContent side={side} align="start">
           <Command className="py-4 border border-[#2E2E2E]/25 w-[320px]">
             <CommandGroup>
               {sizes.map((size) => (

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { z } from "zod";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchema } from '../validators/formSchema';
 
@@ -75,7 +75,7 @@ function CustomFormField({ name, control, component: Component, componentProps, 
       render={({ field }) => (
         <div className="space-y-1.5 md:space-y-3">
           <FormLabel className='text-xs md:text-sm'>{children}</FormLabel>
-          <Component {...field} {...componentProps} />
+          <Component {...field} value={field.value ?? ''} {...componentProps} />
         </div>
       )}
     />
@@ -90,12 +90,11 @@ export function RequestDemoForm() {
         defaultValues: DEFAULT_FORM_VALUES,
     }); 
 
-    const { formState: { errors } } = form;
-
-    const onSubmit = useCallback(async (value: RequestDemoFormSchema) => {
+    const onSubmit = async (data: RequestDemoFormSchema) => {
+      console.log(form.formState.errors);
         setIsLoading(true);
 
-        const adjustedValue = transformFormData(value);
+        const adjustedValue = transformFormData(data);
     
         // Insert into Supabase
         const { error } = await supabase
@@ -105,7 +104,7 @@ export function RequestDemoForm() {
         if (error) {
             console.error('Error submitting form: ', error);
         } else {
-            console.log('Form data:', value);
+            console.log('Form data:', data);
         }
     
         form.reset(DEFAULT_FORM_VALUES, {
@@ -118,7 +117,7 @@ export function RequestDemoForm() {
         });
     
         setIsLoading(false);
-    }, []);
+    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -192,11 +191,8 @@ export function RequestDemoForm() {
                     <Button 
                         type="submit" 
                         className="w-full h-10 md:h-12 text-base bg-[#FBBC05]/25 text-[#FBBC05]"
-                        disabled={isLoading}
-                        onClick={() => {
-                            const data = form.getValues();
-                            onSubmit(data as RequestDemoFormSchema);
-                        }}>
+                        disabled={!form.formState.isValid || isLoading}
+                        onClick={form.handleSubmit(onSubmit)}>
                         Submit
                     </Button>
                     <div>

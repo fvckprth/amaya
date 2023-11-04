@@ -26,6 +26,18 @@ interface IndustrySelectProps {
 
 export const IndustrySelect: React.FC<IndustrySelectProps> = ({ value, onChange }) => {
   const [open, setOpen] = React.useState(false)
+  const [side, setSide] = React.useState<"bottom" | "left" | "top" | "right">(window.innerWidth <= 640 ? "bottom" : "left");
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setSide(window.innerWidth <= 640 ? "bottom" : "left");
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleSelect = (currentValue: string) => {
     onChange(currentValue === value ? "" : currentValue);
@@ -53,7 +65,7 @@ export const IndustrySelect: React.FC<IndustrySelectProps> = ({ value, onChange 
             </svg>
         </Button>
       </PopoverTrigger>
-      <PopoverContent side="left" align="start">
+      <PopoverContent side={side} align="start">
         <Command className="border border-[#2E2E2E]/25 w-[320px]">
           <CommandInput placeholder="Search industry" />
           <ScrollArea className="h-64 w-full">
