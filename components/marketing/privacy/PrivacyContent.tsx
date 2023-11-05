@@ -8,7 +8,7 @@ export function PrivacyContent() {
                     <div className="space-y-3">
                         <div className="text-sm text-[#2E2E2E]">
                             <p>
-                                Amaya, Inc. ("Amaya",” “we,” “our,” and/or “us”) values the privacy of individuals who use our websites and related services (collectively, our “Services”). This privacy policy (the “Privacy Policy”) explains how we collect, use, and share personal information about users of our Services (“Users”).
+                                Amaya, Inc. (&quot;Amaya&quot;, &quot;we,&quot; &quot;our,&quot; and/or &quot;us&quot;) values the privacy of individuals who use our websites and related services (collectively, our &quot;Services&quot;). This privacy policy (the &quot;Privacy Policy&quot;) explains how we collect, use, and share personal information about users of our Services (&quot;Users&quot;).
                             </p>
                         </div>
                     </div>
