@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { formSchema } from '../../validators/formSchema';
+import { formSchema } from '../../../validators/formSchema';
 
 import Link from 'next/link';
 import { Input } from "@/components/ui/input"
@@ -25,9 +25,9 @@ import {
     FormLabel,
   } from "@/components/ui/form"
 
-import { IndustrySelect } from "./form/IndustrySelect";
-import { IntPhoneInput } from "./form/IntPhoneInput";
-import { SizeSelect } from "./form/SizeSelect";
+import { IndustrySelect } from "@/components/marketing/home/form/IndustrySelect";
+import { IntPhoneInput } from "@/components/marketing/home/form/IntPhoneInput";
+import { SizeSelect } from "@/components/marketing/home/form/SizeSelect";
 
 import { supabase } from '@/lib/supabaseClient'
 
@@ -203,7 +203,7 @@ export function RequestDemoForm() {
                   <div>
                     <p className="text-xs md:text-sm text-[#2E2E2E]">
                         View{" "}
-                        <Link href="/privacy" className="hover:text-[#E7E6E9]/50 underline underline-offset-4 decoration-inherit hover:no-underline">
+                        <Link href="/privacy" className="hover:text-[#E7E6E9]/50 hover:underline underline-offset-4 no-underline">
                           privacy policy
                         </Link>
                         {" "}on how we <br/> will handle this information.

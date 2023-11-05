@@ -63,7 +63,7 @@ export default function RootLayout({
         <meta name="twitter:image" content="https://amaya-jbr3y6sfz-east-park.vercel.app/images/amaya-og.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <body className={`${allianceNo2.className} h-full leading-none tracking-tight bg-[#0F0F0F]`}>
+      <body className={`${allianceNo2.className} h-full leading-none tracking-tight font-normal selection:bg-[#FBBC05]/25 selection:text-[#FBBC05] bg-[#0F0F0F]`}>
         {children}
       </body>
     </html>

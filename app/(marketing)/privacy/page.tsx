@@ -1,7 +1,11 @@
+import { PrivacyHeader } from "@/components/marketing/privacy/PrivacyHeader"
+import { PrivacyContent } from "@/components/marketing/privacy/PrivacyContent"
+
 export default function Privacy() {
   return (
-    <div className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'>      
-        <p className="text-white">Prviacy Policy</p>
+    <div className='flex flex-col md:flex-row space-y-10 md:space-y-0 md:justify-between px-4 md:px-12 pt-8 md:pt-32 h-screen overflow-y-hidden'>      
+        <PrivacyHeader />
+        <PrivacyContent />
     </div>
   )
 }

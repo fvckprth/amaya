@@ -1,7 +1,7 @@
-import Nav from '@/components/marketing/Nav'
-import Body from '@/components/marketing/Body'
-import { RequestDemoForm } from '@/components/marketing/RequestDemoForm'
-import { Footer } from '@/components/marketing/Footer'
+import Nav from '@/components/marketing/home/Nav'
+import Body from '@/components/marketing/home/Body'
+import { RequestDemoForm } from '@/components/marketing/home/RequestDemoForm'
+import { Footer } from '@/components/marketing/home/Footer'
 
 export default function Home() {
   return (
