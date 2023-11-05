@@ -91,17 +91,10 @@ input:-webkit-autofill:focus {
   }
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 :focus {
   outline: none;
 }
 
-.no-scroll {
-  @apply h-screen overflow-hidden;
-}
 
 body {
   font-feature-settings: "lnum", "onum", "pnum", "tnum", "ss01", "ss02", "ss04", "ss05", "ss06", "ss07", "ss08", "ss09", "ss10", "ss11", "ss12", "ss13", "ss14", "ss15", "ss16", "ss17", "ss18", "ss19", "ss20";
