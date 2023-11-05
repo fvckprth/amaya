@@ -181,7 +181,8 @@ export function PrivacyContent() {
                     <div className="space-y-3">
                         <div className="text-base text-[#E7E6E9]/25">
                             <h1>
-                                Choices About How We Use and Disclose Your Information
+                                Choices About How We Use <br/>
+                                and Disclose Your Information
                             </h1>
                         </div>
                         <div className="text-sm text-[#2E2E2E]">
