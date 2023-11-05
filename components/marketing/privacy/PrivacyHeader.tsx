@@ -9,7 +9,7 @@ export function PrivacyHeader() {
         </div>
         <div className="text-xs md:text-sm text-[#2E2E2E]">
              <p>
-                UPDATED: NOV 30, 2023
+                UPDATED: NOV 05, 2023
             </p>
         </div>
       </div>
