@@ -31,6 +31,8 @@ import { SizeSelect } from "@/components/marketing/home/form/SizeSelect";
 
 import { supabase } from '@/lib/supabaseClient'
 
+import analytics from '@/lib/analytics';
+
 type RequestDemoFormSchema = z.infer<typeof formSchema>
 
 const DEFAULT_FORM_VALUES = {
@@ -98,6 +100,20 @@ export function RequestDemoForm() {
     const onSubmit = async (data: RequestDemoFormSchema) => {
       console.log(form.formState.errors);
         setIsLoading(true);
+
+        analytics.identify({
+          traits: {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            businessEmail: data.businessEmail,
+            mobileNumber: data.mobileNumber,
+            jobTitle: data.jobTitle,
+            company: data.company,
+            industry: data.industry,
+            size: data.size,
+            message: data.message,
+          },
+        });
 
         const adjustedValue = transformFormData(data);
     
