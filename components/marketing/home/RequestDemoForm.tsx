@@ -151,7 +151,11 @@ export function RequestDemoForm() {
             variant="default" 
             className="w-full h-10 md:h-12 text-sm md:text-base bg-[#FBBC05]/25 text-[#FBBC05]"
             onClick={() => {
-              analytics.track('Request Demo Button Clicked');
+              analytics.track('Request Demo Button Clicked', {}, function(error) {
+                if (error) {
+                  console.log('Segment track error:', error);
+                }
+              });
             }}
             >
               Request Demo
