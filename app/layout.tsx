@@ -67,5 +67,10 @@ export default function RootLayout({
         {children}
       </body>
     </html>
+<<<<<<< Updated upstream
   )
 }
+=======
+  );
+}
+>>>>>>> Stashed changes

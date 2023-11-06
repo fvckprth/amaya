@@ -29,7 +29,12 @@ import { IndustrySelect } from "@/components/marketing/home/form/IndustrySelect"
 import { IntPhoneInput } from "@/components/marketing/home/form/IntPhoneInput";
 import { SizeSelect } from "@/components/marketing/home/form/SizeSelect";
 
+<<<<<<< Updated upstream
 import { supabase } from '@/lib/supabaseClient'
+=======
+import { supabase } from "@/lib/supabaseClient";
+import analytics from '@/lib/analytics';
+>>>>>>> Stashed changes
 
 type RequestDemoFormSchema = z.infer<typeof formSchema>
 
@@ -99,6 +104,7 @@ export function RequestDemoForm() {
       console.log(form.formState.errors);
         setIsLoading(true);
 
+<<<<<<< Updated upstream
         const adjustedValue = transformFormData(data);
     
         // Insert into Supabase
@@ -122,6 +128,39 @@ export function RequestDemoForm() {
         });
     
         setIsLoading(false);
+=======
+    analytics.identify({
+      userId: data.firstName,
+      traits: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.businessEmail,
+        mobileNumber: data.mobileNumber,
+        jobTitle: data.jobTitle,
+        company: data.company,
+        industry: data.industry,
+        size: data.size,
+        message: data.message,
+      }
+    });
+
+    analytics.track({
+      event: 'Form Submitted',
+      properties: data
+    });
+
+    const adjustedValue = transformFormData(data);
+
+    // Insert into Supabase
+    const { error } = await supabase
+      .from("demo_requests")
+      .insert([adjustedValue]);
+
+    if (error) {
+      console.error("Error submitting form: ", error);
+    } else {
+      console.log("Form data:", data);
+>>>>>>> Stashed changes
     }
 
     useEffect(() => {
