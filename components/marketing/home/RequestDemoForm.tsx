@@ -206,7 +206,7 @@ export function RequestDemoForm() {
                         <Link href="/privacy" className="hover:text-[#E7E6E9]/50 hover:underline underline-offset-4 no-underline">
                           privacy policy
                         </Link>
-                        {" "}on how we <br/> will handle this information.
+                        {" "}on how we <br/> use this information.
                     </p>
                   </div>
                 </div>
