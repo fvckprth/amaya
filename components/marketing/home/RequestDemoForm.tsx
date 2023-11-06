@@ -117,6 +117,19 @@ export function RequestDemoForm() {
             console.log('Form data:', data);
             // Redirect to page.tsx after form submission
             router.push('/success');
+
+            // Identify user with Segment
+            analytics.identify({
+              firstName: data.firstName,
+              lastName: data.lastName,
+              email: data.businessEmail,
+              phone: data.mobileNumber,
+              title: data.jobTitle,
+              company: data.company,
+              createdAt: new Date().toISOString(),
+            });
+            // Track form submission with Segment
+            analytics.track('RequestDemoFormSubmitted', adjustedValue);
         }
     
         form.reset(DEFAULT_FORM_VALUES, {
@@ -151,7 +164,7 @@ export function RequestDemoForm() {
             variant="default" 
             className="w-full h-10 md:h-12 text-sm md:text-base bg-[#FBBC05]/25 text-[#FBBC05]"
             onClick={() => {
-              analytics.track('Request Demo Button Clicked', {}, function(error) {
+              analytics.track('RequestDemoButtonClicked', {}, function(error) {
                 if (error) {
                   console.log('Segment track error:', error);
                 }
