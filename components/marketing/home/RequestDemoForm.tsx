@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -95,6 +96,8 @@ export function RequestDemoForm() {
         defaultValues: DEFAULT_FORM_VALUES,
     }); 
 
+    const router = useRouter();
+
     const onSubmit = async (data: RequestDemoFormSchema) => {
       console.log(form.formState.errors);
         setIsLoading(true);
@@ -110,6 +113,8 @@ export function RequestDemoForm() {
             console.error('Error submitting form: ', error);
         } else {
             console.log('Form data:', data);
+            // Redirect to page.tsx after form submission
+            router.push('/success');
         }
     
         form.reset(DEFAULT_FORM_VALUES, {
