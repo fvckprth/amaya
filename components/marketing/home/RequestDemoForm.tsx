@@ -5,7 +5,9 @@ import { useState, useEffect } from 'react';
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { formSchema } from '../../../validators/formSchema';
+import { formSchema } from '@/validators/formSchema';
+import { analytics } from '@/lib/segment'
+
 
 import Link from 'next/link';
 import { Input } from "@/components/ui/input"
@@ -147,7 +149,11 @@ export function RequestDemoForm() {
         <Button 
             type="button"
             variant="default" 
-            className="w-full h-10 md:h-12 text-sm md:text-base bg-[#FBBC05]/25 text-[#FBBC05]">
+            className="w-full h-10 md:h-12 text-sm md:text-base bg-[#FBBC05]/25 text-[#FBBC05]"
+            onClick={() => {
+              analytics.track('Request Demo Button Clicked');
+            }}
+            >
               Request Demo
         </Button>
       </SheetTrigger>
